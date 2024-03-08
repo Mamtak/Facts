@@ -1,4 +1,4 @@
-package com.app.facts.ui.base
+package com.app.facts.presentation.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

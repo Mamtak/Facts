@@ -1,17 +1,13 @@
 package com.app.facts.ui
 
-import com.app.facts.MockDataClassGenerator
+import com.app.facts.core.common.ResultState
 import com.app.facts.data.FactsRepository
-import com.app.facts.data.model.FactsModel
-import com.app.facts.data.repo.ApiRepository
-import com.app.facts.data.repo.ResultState
-import com.app.facts.utils.NO_INTERNET_CONNECTION
-import com.app.facts.utils.coroutines.DispatcherProviderTest
+import com.app.facts.domain.model.FactsModel
+import com.app.facts.domain.repo.ApiRepository
+import com.app.facts.core.utils.NO_INTERNET_CONNECTION
 import io.mockk.coEvery
 import io.mockk.coVerify
-import io.mockk.every
 import io.mockk.mockk
-import io.mockk.verify
 import junit.framework.TestCase.assertEquals
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.first

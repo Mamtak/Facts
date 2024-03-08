@@ -1,11 +1,12 @@
 package com.app.facts.data
 
-import com.app.facts.data.model.FactsModel
-import com.app.facts.data.repo.ApiRepository
-import com.app.facts.data.repo.DataError
-import com.app.facts.data.repo.ResultState
-import com.app.facts.ui.base.BaseRepository
-import com.app.facts.utils.coroutines.DispatcherProvider
+import com.app.facts.core.common.DataError
+import com.app.facts.core.common.ResultState
+import com.app.facts.core.common.Success
+import com.app.facts.domain.repo.ApiRepository
+import com.app.facts.presentation.base.BaseRepository
+import com.app.facts.core.utils.coroutines.DispatcherProvider
+import com.app.facts.domain.model.FactsModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
@@ -20,6 +21,15 @@ class FactsRepository @Inject constructor(
 
         val factResultData = getApiRepository().getAnimalFacts()
         factResultData.result?.let {
+            when(it){
+                is FactsModel -> Success(factResultData.result)
+                else -> {
+                    return flow {
+                        emit(DataError(factResultData.errorMessage))
+                    }
+                }
+            }
+//
             if (it.success) {
                 val factsResponse = factResultData.result
 

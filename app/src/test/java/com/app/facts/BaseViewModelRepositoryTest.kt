@@ -1,8 +1,8 @@
 package com.app.facts
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.app.facts.ui.base.BaseRepository
-import com.app.facts.ui.base.BaseViewModel
+import com.app.facts.presentation.base.BaseRepository
+import com.app.facts.presentation.base.BaseViewModel
 import com.app.facts.utils.coroutines.CoroutineTestRule
 import com.app.facts.utils.coroutines.DispatcherProviderTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi

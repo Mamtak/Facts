@@ -1,4 +1,4 @@
-package com.app.facts.data.model
+package com.app.facts.domain.model
 
 data class FactsModel(
     val facts: List<String>,

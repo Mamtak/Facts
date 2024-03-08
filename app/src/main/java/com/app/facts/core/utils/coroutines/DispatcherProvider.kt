@@ -1,4 +1,4 @@
-package com.app.facts.utils.coroutines
+package com.app.facts.core.utils.coroutines
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers

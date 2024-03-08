@@ -1,4 +1,4 @@
-package com.app.facts.ui.base
+package com.app.facts.presentation.base
 
 
 open class BaseViewModelRepository<T: BaseRepository>(repo : T )

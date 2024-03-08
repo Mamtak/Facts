@@ -1,6 +1,6 @@
-package com.app.facts.data.repo
+package com.app.facts.core.common
 
-import com.app.facts.utils.GENERIC_ERROR
+import com.app.facts.core.utils.GENERIC_ERROR
 
 sealed class ResultState<T>(
     val result: T? = null,

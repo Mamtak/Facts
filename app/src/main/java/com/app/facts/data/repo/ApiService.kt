@@ -1,6 +1,6 @@
 package com.app.facts.data.repo
 
-import com.app.facts.data.model.FactsModel
+import com.app.facts.domain.model.FactsModel
 import retrofit2.Response
 import retrofit2.http.GET
 

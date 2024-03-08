@@ -1,14 +1,14 @@
-package com.app.facts.ui.base
+package com.app.facts.presentation.base
 
 import androidx.annotation.VisibleForTesting
-import androidx.annotation.VisibleForTesting.PRIVATE
+import androidx.annotation.VisibleForTesting.Companion.PRIVATE
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.app.facts.data.repo.DataError
-import com.app.facts.data.repo.ResultState
-import com.app.facts.data.repo.Success
-import com.app.facts.utils.GENERIC_ERROR
+import com.app.facts.core.common.DataError
+import com.app.facts.core.common.ResultState
+import com.app.facts.core.common.Success
+import com.app.facts.core.utils.GENERIC_ERROR
 import kotlinx.coroutines.CoroutineExceptionHandler
 
 open class BaseViewModel<T>(

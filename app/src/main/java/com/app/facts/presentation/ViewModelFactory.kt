@@ -1,4 +1,4 @@
-package com.app.facts.ui
+package com.app.facts.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

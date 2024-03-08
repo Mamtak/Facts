@@ -1,8 +1,8 @@
 package com.app.facts.di.facts
 
 import com.app.facts.data.FactsRepository
-import com.app.facts.data.repo.ApiRepository
-import com.app.facts.utils.coroutines.DispatcherProvider
+import com.app.facts.domain.repo.ApiRepository
+import com.app.facts.core.utils.coroutines.DispatcherProvider
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton

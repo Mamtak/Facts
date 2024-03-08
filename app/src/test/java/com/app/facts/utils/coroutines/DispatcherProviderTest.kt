@@ -1,5 +1,6 @@
 package com.app.facts.utils.coroutines
 
+import com.app.facts.core.utils.coroutines.DispatcherProvider
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher

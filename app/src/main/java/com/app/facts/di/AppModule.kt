@@ -1,9 +1,9 @@
 package com.app.facts.di
 
 import com.app.facts.data.repo.ApiHelper
-import com.app.facts.data.repo.ApiRepository
-import com.app.facts.utils.coroutines.AppDispatcherProvider
-import com.app.facts.utils.coroutines.DispatcherProvider
+import com.app.facts.domain.repo.ApiRepository
+import com.app.facts.core.utils.coroutines.AppDispatcherProvider
+import com.app.facts.core.utils.coroutines.DispatcherProvider
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

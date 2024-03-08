@@ -1,16 +1,14 @@
-package com.app.facts.ui
+package com.app.facts.presentation
 
 import androidx.annotation.VisibleForTesting
-import androidx.annotation.VisibleForTesting.PRIVATE
-import androidx.lifecycle.LiveData
+import androidx.annotation.VisibleForTesting.Companion.PRIVATE
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.app.facts.core.common.DataError
+import com.app.facts.core.common.ResultState
 import com.app.facts.data.FactsRepository
-import com.app.facts.data.model.FactsModel
-import com.app.facts.data.repo.DataError
-import com.app.facts.data.repo.ResultState
-import com.app.facts.ui.base.BaseViewModelRepository
-import dagger.hilt.android.lifecycle.HiltViewModel
+import com.app.facts.domain.model.FactsModel
+import com.app.facts.presentation.base.BaseViewModelRepository
 import kotlinx.coroutines.launch
 
 
@@ -19,8 +17,12 @@ class MainActivityViewModel (
 ) : BaseViewModelRepository<FactsRepository>(factsRepository) {
 
     @VisibleForTesting(otherwise = PRIVATE)
-    val factsResponsePrivate = MutableLiveData<ResultState<FactsModel>>()
-    val factsResponse: LiveData<ResultState<FactsModel>> get() = factsResponsePrivate
+    private val _factsResponsePrivate = MutableLiveData<ResultState<FactsModel>>()
+    val factsResponse: MutableLiveData<ResultState<FactsModel>> get() = _factsResponsePrivate
+
+    init {
+        loadingFacts()
+    }
 
     fun loadingFacts() {
                 viewModelScope.launch(exceptionHandler) {
@@ -28,7 +30,7 @@ class MainActivityViewModel (
                     getRepository().getAnimalFactsData()
                         .collect { factResult ->
                             if (factResult.result != null) {
-                                factsResponsePrivate.value = factResult
+                                _factsResponsePrivate.value = factResult
                             } else {
                                 showMessageDialog(factResult as DataError<String>)
                             }

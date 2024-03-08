@@ -2,11 +2,15 @@ package com.app.facts.data.repo
 
 import android.content.Context
 import androidx.annotation.VisibleForTesting
-import androidx.annotation.VisibleForTesting.PRIVATE
-import com.app.facts.data.model.FactsModel
-import com.app.facts.utils.GENERIC_ERROR
-import com.app.facts.utils.NO_INTERNET_CONNECTION
-import com.app.facts.utils.NetworkUtils
+import androidx.annotation.VisibleForTesting.Companion.PRIVATE
+import com.app.facts.core.common.DataError
+import com.app.facts.core.common.ResultState
+import com.app.facts.core.common.Success
+import com.app.facts.core.utils.GENERIC_ERROR
+import com.app.facts.core.utils.NO_INTERNET_CONNECTION
+import com.app.facts.core.utils.NetworkUtils
+import com.app.facts.domain.model.FactsModel
+import com.app.facts.domain.repo.ApiRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import retrofit2.Response
 import java.io.IOException

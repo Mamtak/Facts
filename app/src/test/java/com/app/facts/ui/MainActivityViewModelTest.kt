@@ -2,9 +2,9 @@ package com.app.facts.ui
 
 import com.app.facts.BaseViewModelRepositoryTest
 import com.app.facts.data.FactsRepository
-import com.app.facts.data.repo.ApiRepository
+import com.app.facts.domain.repo.ApiRepository
+import com.app.facts.presentation.MainActivityViewModel
 import io.mockk.coEvery
-import io.mockk.every
 import io.mockk.mockk
 import io.mockk.spyk
 import io.mockk.verify

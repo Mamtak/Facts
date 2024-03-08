@@ -1,11 +1,11 @@
 package com.app.facts
 
-import com.app.facts.data.model.FactsModel
-import com.app.facts.data.repo.DataError
-import com.app.facts.data.repo.ResultState
-import com.app.facts.data.repo.Success
-import com.app.facts.utils.GENERIC_ERROR
-import com.app.facts.utils.NO_INTERNET_CONNECTION
+import com.app.facts.domain.model.FactsModel
+import com.app.facts.core.common.DataError
+import com.app.facts.core.common.ResultState
+import com.app.facts.core.common.Success
+import com.app.facts.core.utils.GENERIC_ERROR
+import com.app.facts.core.utils.NO_INTERNET_CONNECTION
 
 class MockDataClassGenerator {
 

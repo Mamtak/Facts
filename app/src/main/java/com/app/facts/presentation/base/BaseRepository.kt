@@ -1,7 +1,7 @@
-package com.app.facts.ui.base
+package com.app.facts.presentation.base
 
-import com.app.facts.data.repo.ApiRepository
-import com.app.facts.utils.coroutines.DispatcherProvider
+import com.app.facts.domain.repo.ApiRepository
+import com.app.facts.core.utils.coroutines.DispatcherProvider
 
 
 open class BaseRepository(

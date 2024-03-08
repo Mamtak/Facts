@@ -1,4 +1,4 @@
-package com.app.facts.utils
+package com.app.facts.core.utils
 
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
