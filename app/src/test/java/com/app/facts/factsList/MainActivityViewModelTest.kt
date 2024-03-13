@@ -1,4 +1,4 @@
-package com.app.facts.ui
+package com.app.facts.factsList
 
 import com.app.facts.BaseViewModelRepositoryTest
 import com.app.facts.data.FactsRepository
@@ -24,7 +24,7 @@ class MainActivityViewModelTest : BaseViewModelRepositoryTest<MainActivityViewMo
     }
 
     @Test
-    fun `getAnimalFacts, return success`() {
+    fun getAnimalFactsSuccessResponseTest() {
         //Given
         coEvery {
             repository.getAnimalFactsData()
@@ -32,10 +32,10 @@ class MainActivityViewModelTest : BaseViewModelRepositoryTest<MainActivityViewMo
 
 
         //when
-        viewModelUnderTest.factsResponsePrivate.observeForever {}
+        viewModelUnderTest.factsResponse.observeForever {}
 
         //then
-        val loginResponse = viewModelUnderTest.factsResponsePrivate.value!!.result
+        val loginResponse = viewModelUnderTest.factsResponse.value!!.result
 
         val expectedResponse = mockDataClassGenerator.getSuccessFactsResponse().result
 

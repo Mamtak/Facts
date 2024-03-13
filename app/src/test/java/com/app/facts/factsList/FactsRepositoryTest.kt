@@ -1,10 +1,12 @@
-package com.app.facts.ui
+package com.app.facts.factsList
 
+import com.app.facts.MockDataClassGenerator
 import com.app.facts.core.common.ResultState
 import com.app.facts.data.FactsRepository
 import com.app.facts.domain.model.FactsModel
 import com.app.facts.domain.repo.ApiRepository
 import com.app.facts.core.utils.NO_INTERNET_CONNECTION
+import com.app.facts.utils.coroutines.DispatcherProviderTest
 import io.mockk.coEvery
 import io.mockk.coVerify
 import io.mockk.mockk
@@ -23,6 +25,7 @@ class FactsRepositoryTest{
 
     protected val mockDataClassGenerator: MockDataClassGenerator = MockDataClassGenerator()
 
+    @OptIn(ExperimentalCoroutinesApi::class)
     @Before
     fun setTup() {
         apiRepository = mockk(relaxUnitFun = true)
@@ -32,7 +35,7 @@ class FactsRepositoryTest{
     }
 
     @Test
-    fun `facts , success response,verify list coming with result`() {
+    fun factsAPISuccessResponseTest() {
 
         //Given
         coEvery {
@@ -56,7 +59,7 @@ class FactsRepositoryTest{
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun `facts , error response,verify list coming with result`() {
+    fun factsAPIErrorResponseResultTest() {
 
         //Given
         coEvery {
@@ -79,7 +82,7 @@ class FactsRepositoryTest{
 
     @OptIn(ExperimentalCoroutinesApi::class)
     @Test
-    fun `facts , no network ,assert no network error message but don't return the list`() {
+    fun factsAPINoNetworkConnectionEmptyListTest() {
 
         //Given
         coEvery {
